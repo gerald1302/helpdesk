@@ -11,7 +11,7 @@ Backend du projet Helpdesk construit avec **FastAPI**.
    # Creer l\'environnement:
    python -m venv venv
    # Actier l\'environnement:
-   venv\Scripts\activate
+   ./venv\Scripts\activate
    ```
 
 2. **Installer les dépendances :**
@@ -19,7 +19,7 @@ Backend du projet Helpdesk construit avec **FastAPI**.
     pip install -r requirements.txt
     ```
 
-3. **Installer les dépendances :**
+3. **Lancer le backend :**
     ```
     uvicorn app.main:app --reload
     ```
