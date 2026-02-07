@@ -6,8 +6,21 @@ import CommunityCard from "@/features/sidebar/CommunityCard"
 import SystemStatus from "@/features/sidebar/SystemStatus"
 import StillNeedHelp from "@/features/help/StillNeedHelp"
 import Footer from "@/components/layout/Footer"
+import UserMenu from "@/components/layout/UserMenu"
+import { useNavigate } from "react-router-dom"
+import { useAuth } from "@/context/AuthContext"
 
 const Home = () => {
+  const navigate = useNavigate()
+  const { isAuthenticated } = useAuth()
+
+  const handleSubmitTicket = () => {
+    if (!isAuthenticated) {
+      navigate("/login")
+    } else {
+      navigate("/tickets/new")
+    }
+  }
   return (
     <>
       <Navbar
@@ -20,21 +33,23 @@ const Home = () => {
 
         center={
           <>
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">Knowledge Base</a>
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">Community</a>
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">Release Notes</a>
+            <a href="#" className="text-sm text-gray-600 hover:text-blue-600"> Base de connaissances</a>
+            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">Communauté</a>
+            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">Notes de version</a>
           </>
         }
 
         right={
           <>
-            <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              Submit a Ticket
+            <button
+              onClick={handleSubmitTicket}
+              className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Soumettre un ticket
             </button>
 
-            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-              👤
-            </div>
+            <UserMenu />
+            
           </>
         }
       />
