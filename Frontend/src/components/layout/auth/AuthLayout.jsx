@@ -1,9 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { Shield, ChartColumnIcon } from "lucide-react";
+import AuthHeader from "@/components/auth/AuthHeader";
 
 export default function AuthLayout({ children }) {
   const { pathname } = useLocation();
   const isRegister = pathname.includes("register");
+  const isLogin = pathname.includes("login");
 
   const left = {
     title: isRegister ? "Empower Your Support Team" : "The world's best support",
@@ -60,35 +62,7 @@ export default function AuthLayout({ children }) {
 
       {/* Right panel - scrollable */}
       <div className="flex-1 flex flex-col lg:w-1/2 overflow-auto">
-        <header className="sticky top-0 z-20 flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-10 py-3">
-          <div className="flex items-center gap-3">
-            <div className="text-primary">
-              <svg className="w-6 h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor"></path>
-              </svg>
-            </div>
-            <h2 className="text-lg font-bold leading-tight tracking-tight">SupportPro Enterprise</h2>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <span className="hidden md:block text-sm text-slate-500 dark:text-slate-400">
-              {isRegister ? "Already have an account?" : "Need help? Contact support"}
-            </span>
-
-            {isRegister ? (
-              <a
-                href="/login"
-                className="hidden md:inline-flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 border border-slate-300 text-sm font-semibold hover:bg-slate-50 transition-colors"
-              >
-                Sign In
-              </a>
-            ) : (
-              <button className="hidden md:inline-flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 border border-slate-300 text-sm font-semibold hover:bg-slate-50 transition-colors">
-                Contact
-              </button>
-            )}
-          </div>
-        </header>
+        <AuthHeader isRegister={isRegister} />
 
         <main className="flex-1 flex items-center justify-center p-6 md:p-12 bg-white dark:bg-background-dark">
           <div className="w-full max-w-md">

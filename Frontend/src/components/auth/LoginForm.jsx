@@ -2,6 +2,7 @@ import Input from "../common/Input";
 import PasswordField from "../common/PasswordField";
 import Button from "../common/Button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   return (
@@ -31,9 +32,9 @@ const LoginForm = () => {
             Remember me
           </label>
 
-          <a href="#" className="text-[#0c5eb3]/80 font-semibold">
+          <Link to="/forgot-password" className="text-[#0c5eb3]/80 font-semibold">
             Forgot password?
-          </a>
+          </Link>
         </div>
 
         <Button type="submit" className="flex items-center justify-center">
