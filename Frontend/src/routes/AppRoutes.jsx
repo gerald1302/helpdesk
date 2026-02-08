@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
+import AdminDashboard from "../pages/admin/Dashboard";
 
 const AppRoutes = () => {
   return (
@@ -11,11 +12,8 @@ const AppRoutes = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* Exemple de routes futures */}
-      {/*
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/tickets" element={<Tickets />} />
-      */}
+      {/* Dashboard */}
+      <Route path="/dashboard" element={<AdminDashboard />} />
 
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/login" replace />} />
