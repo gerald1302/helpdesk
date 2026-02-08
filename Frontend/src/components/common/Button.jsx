@@ -1,9 +1,15 @@
-import React from 'react'
+import { cn } from "@/lib/cn";
 
-const Button = () => {
+export default function Button({ children, className, ...props }) {
   return (
-    <div>Button</div>
-  )
+    <button
+      {...props}
+      className={cn(
+        "w-full h-12 bg-[#0c5eb3] hover:bg-[#0c5eb3]/90 text-white font-bold rounded-lg transition-all shadow-md shadow-primary/20 active:scale-[0.98]",
+        className
+      )}
+    >
+      {children}
+    </button>
+  );
 }
-
-export default Button
