@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  input::-ms-reveal,
+  input::-ms-clear {
+    display: none;
+  }
+}
+
+/* Pour Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+/* Pour Chrome, Edge et Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f7fafc;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 1px solid #f7fafc; /* Crée un petit espace autour */
+}
