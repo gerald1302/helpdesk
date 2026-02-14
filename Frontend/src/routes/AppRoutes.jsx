@@ -4,6 +4,7 @@ import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import AdminDashboard from "../pages/admin/Dashboard";
 import Tickets from "../pages/tickets/Tickets";
+import TicketDetails from "../pages/tickets/TicketDetails";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,9 @@ const AppRoutes = () => {
 
       {/* Tickets */}
       <Route path="/tickets" element={<Tickets />} />
+
+      {/* Ticket Details */}
+      <Route path="/tickets/:id" element={<TicketDetails />} />
     </Routes>
   );
 };
