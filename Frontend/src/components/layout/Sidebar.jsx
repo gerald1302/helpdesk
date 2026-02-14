@@ -30,7 +30,7 @@ export default function Sidebar() {
         <div className="mt-2">
           <NavItem to="/dashboard" icon={Grid} label="Dashboard" />
           <NavItem to="/tickets" icon={Ticket} label="Tickets" />
-          <NavItem to="/agents" icon={Users} label="Agents" />
+          <NavItem to="/users" icon={Users} label="Agents" />
           <NavItem to="/reports" icon={BarChart2} label="Reports" />
         </div>
 

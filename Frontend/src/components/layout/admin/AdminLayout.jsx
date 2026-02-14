@@ -15,10 +15,6 @@ export default function AdminLayout({ children }) {
         <main className="flex-1 overflow-y-auto p-6 lg:p-8">
           {children}
         </main>
-
-        <footer className="hidden md:block mt-auto p-4 text-center text-xs text-slate-400 border-t border-slate-100">
-          ENTERPRISE ANALYTICS DASHBOARD • © 2024 SUPPORTPLATFORM INC.
-        </footer>
       </div>
     </div>
   );

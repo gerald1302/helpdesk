@@ -5,6 +5,7 @@ import ForgotPassword from "../pages/auth/ForgotPassword";
 import AdminDashboard from "../pages/admin/Dashboard";
 import Tickets from "../pages/tickets/Tickets";
 import TicketDetails from "../pages/tickets/TicketDetails";
+import Users from "../pages/admin/Users";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,9 @@ const AppRoutes = () => {
 
       {/* Dashboard */}
       <Route path="/dashboard" element={<AdminDashboard />} />
+
+      {/* Users */}
+      <Route path="/users" element={<Users />} />
 
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/login" replace />} />
