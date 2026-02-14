@@ -5,6 +5,7 @@ import ForgotPassword from "../pages/auth/ForgotPassword";
 import AdminDashboard from "../pages/admin/Dashboard";
 import Tickets from "../pages/tickets/Tickets";
 import TicketDetails from "../pages/tickets/TicketDetails";
+import CreateTicket from "../pages/tickets/CreateTicket";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,9 @@ const AppRoutes = () => {
 
       {/* Ticket Details */}
       <Route path="/tickets/:id" element={<TicketDetails />} />
+
+      {/* Create Ticket */}
+      <Route path="/create-ticket" element={<CreateTicket />} />
     </Routes>
   );
 };
