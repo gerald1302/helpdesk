@@ -3,6 +3,7 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import AdminDashboard from "../pages/admin/Dashboard";
+import Tickets from "../pages/tickets/Tickets";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,9 @@ const AppRoutes = () => {
 
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/login" replace />} />
+
+      {/* Tickets */}
+      <Route path="/tickets" element={<Tickets />} />
     </Routes>
   );
 };
